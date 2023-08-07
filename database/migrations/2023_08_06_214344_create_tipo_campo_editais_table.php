@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInputEdiatisTable extends Migration
+class CreateTipoCampoEditaisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateInputEdiatisTable extends Migration
      */
     public function up()
     {
-        Schema::create('input_editais', function (Blueprint $table) {
+        Schema::create('tipo_campo_editais', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string("titulo");
-            $table->boolean("obrigatorio");
-            $table->integer("ordem");
-            $table->foreignId("tipo_input_editais_id");
-            $table->foreignId("editais_id");
+            $table->string("nome");
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateInputEdiatisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('input_ediatis');
+        Schema::dropIfExists('tipo_requisitos');
     }
 }
