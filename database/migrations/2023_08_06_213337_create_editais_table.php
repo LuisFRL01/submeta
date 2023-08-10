@@ -16,7 +16,7 @@ class CreateEditaisTable extends Migration
         Schema::create('editais', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string("nome");
-            $table->string("descricao");
+            $table->text("descricao");
             $table->boolean("cota_doutor");
             $table->unsignedBigInteger('users_criador_id');
             $table->foreign('users_criador_id')->references('id')->on('users');

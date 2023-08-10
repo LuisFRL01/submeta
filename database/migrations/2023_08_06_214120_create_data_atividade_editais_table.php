@@ -15,8 +15,8 @@ class CreateDataAtividadeEditaisTable extends Migration
     {
         Schema::create('data_atividade_editais', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string("nome");
-            $table->date("data");
+            $table->string("nome_atividade");
+            $table->date("data_atividade");
             $table->foreignId("editais_id");
             $table->timestamps();
         });

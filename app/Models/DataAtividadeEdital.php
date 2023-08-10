@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class DataAtividadeEdital extends Model
 {
     protected $fillable = [
-        "nome", "data", "editais_id"
+        "nome_data", "data_atividade", "editais_id"
     ];
 }

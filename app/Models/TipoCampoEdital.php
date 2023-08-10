@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UnidadeAdministrativa extends Model
+class TipoInputEdital extends Model
 {
     protected $fillable = [
-        'nome', "email"
+        "id", "nome"
     ];
 }

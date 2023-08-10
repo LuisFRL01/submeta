@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCampoEdiatisTable extends Migration
+class CreateCampoEditalOpcoesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateCampoEdiatisTable extends Migration
      */
     public function up()
     {
-        Schema::create('campo_editais', function (Blueprint $table) {
+        Schema::create('campo_edital_opcoes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string("titulo_campo");
-            $table->boolean("campo_obrigatorio");
-            $table->integer("ordem_campo");
-            $table->foreignId("tipo_campo_editais_id");
-            $table->foreignId("editais_id");
+            $table->string("nome_opcao");
+            $table->boolean("opcao_escolhida")->nullable();
+            $table->foreignId("campo_editais_id");
+            $table->foreignId("projeto_id")->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateCampoEdiatisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('input_ediatis');
+        Schema::dropIfExists('campo_edital_opcoes');
     }
 }
